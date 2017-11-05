@@ -1,0 +1,23 @@
+1/ cli
+# ng will create package.json and git repo for you
+# git repo and heroku app already exist for this, so I need to connect to them
+
+ng new mean-contactlist-angular2
+git commit -m "initial commit"
+git remote add origin https://github.com/AgentBoo/meanstack_heroku_tutorial.git
+git push -u origin master
+heroku git:remote -a "thawing-beyond-43984"
+
+2/ cli
+npm i -g @angular/cli
+
+3/ cli
+ng new mean-contactlist-angular2
+npm i -S express body-parser mongodb nodemon
+
+4/ cli
+curl -H "Content-Type: application/json" -d '{"name":"mLab Support", "email": "support@mlab.com"}' https://thawing-beyond-43984.herokuapp.com/api/contacts
+
+5/ cli
+cd /src/app/contacts
+ng generate class contacts/contact
