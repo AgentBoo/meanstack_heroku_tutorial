@@ -52,5 +52,14 @@ npm i -S express body-parser mongodb nodemon
 curl -H "Content-Type: application/json" -d '{"name":"mLab Support", "email": "support@mlab.com"}' https://thawing-beyond-43984.herokuapp.com/api/contacts
 
 5/ cli
-cd /src/app/contacts
+cd /src/app
 ng generate class contacts/contact
+ng generate component contacts/contact-details
+ng generate component contacts/contact-list
+ng generate service contacts/contact
+
+6/ follow tutorial for components and templates
+https://devcenter.heroku.com/articles/mean-apps-restful-api
+
+7/ cli
+npm install --save @angular/cli @angular/compiler-cli
