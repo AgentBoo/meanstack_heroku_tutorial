@@ -22,6 +22,11 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
   db = database;
   console.log("Database connection ready");
 
+  // Create link to Angular build directory
+  var distDir = __dirname + "/dist/";
+  app.use(express.static(distDir));
+
+  
   // Initialize the app.
   var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;

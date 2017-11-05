@@ -12,4 +12,7 @@ heroku addons:create mongolab
 
 2/ cli
 npm i -g @angular/cli
+
+3/ cli
+ng new mean-contactlist-angular2
 npm i -S express body-parser mongodb nodemon
