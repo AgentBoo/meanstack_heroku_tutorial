@@ -7,8 +7,9 @@ git push -u origin master
 heroku create
 heroku apps
 heroku open --app
-heroku git:remote -a infinite-journey-79443
+heroku git:remote -a "thawing-beyond-43984"
 heroku addons:create mongolab
 
 2/ cli
+npm i -g @angular/cli
 npm i -S express body-parser mongodb nodemon
