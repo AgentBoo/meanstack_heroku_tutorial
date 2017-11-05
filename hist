@@ -1,21 +1,54 @@
 1/ cli
-# ng will create package.json and git repo for you
+# install globally, do it just once for all
+npm i -g @angular/cli
+
+# ng will create package.json (contains the important stuff about angular) and git repo for you
 # git repo and heroku app already exist for this, so I need to connect to them
 
 ng new mean-contactlist-angular2
+git init
 git commit -m "initial commit"
 git remote add origin https://github.com/AgentBoo/meanstack_heroku_tutorial.git
 git push -u origin master
 heroku git:remote -a "thawing-beyond-43984"
 
-2/ cli
-npm i -g @angular/cli
+2/ src/main.ts
+import './polyfills.ts';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
 
 3/ cli
-ng new mean-contactlist-angular2
+# each model instance will have a following schema
+{
+  "_id": <ObjectId>,
+  "name": <string>,
+  "email": <string>,
+  "phone": {
+    "mobile": <string>,
+    "work": <string>
+  }
+}
+
+touch server.js
 npm i -S express body-parser mongodb nodemon
 
-4/ cli
+4/ package.json
+{ "scripts": {
+    "start": "nodemon server.js",
+  }
+}
+
+5/ cli
 curl -H "Content-Type: application/json" -d '{"name":"mLab Support", "email": "support@mlab.com"}' https://thawing-beyond-43984.herokuapp.com/api/contacts
 
 5/ cli
